@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 const orderRouter= require('./routs/orders')
 const authRouter= require('./routs/auth')
+const courierRouter= require('./routs/courier')
 // Middleware to parse JSON
 app.use(express.json());
 
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 });
 app.use('/auth', authRouter);
 app.use('/orders', orderRouter);
+app.use('/courier', courierRouter);
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
