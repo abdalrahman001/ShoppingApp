@@ -1,0 +1,23 @@
+.admin-board {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.admin-board h1 {
+  font-size: 24px;
+  color: #333;
+}

@@ -1,0 +1,11 @@
+<div class="admin-board">
+  <h1>{{ title }}</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/admin/users">Manage Users</a></li>
+      <li><a routerLink="/admin/orders">Manage Orders</a></li>
+      <li><a routerLink="/admin/settings">Settings</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet> <!-- For rendering child components -->
+</div>

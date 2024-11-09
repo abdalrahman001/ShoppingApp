@@ -1,0 +1,11 @@
+<div *ngIf="orderDetails">
+    <h2>Order Details</h2>
+    <p><strong>Pickup Location:</strong> {{ orderDetails.pickupLocation }}</p>
+    <p><strong>Drop-off Location:</strong> {{ orderDetails.dropoffLocation }}</p>
+    <p><strong>Package Details:</strong> {{ orderDetails.packageDetails }}</p>
+    <p><strong>Delivery Time:</strong> {{ orderDetails.deliveryTime }}</p>
+    <p><strong>Status:</strong> {{ orderDetails.status }}</p>
+    
+    <button (click)="cancelOrder()">Cancel Order</button>
+  </div>
+  

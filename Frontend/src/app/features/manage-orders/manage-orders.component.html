@@ -1,0 +1,28 @@
+<!-- src/app/features/manage-orders/manage-orders.component.html -->
+
+<h2>Manage Orders</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Pickup Location</th>
+      <th>Drop-off Location</th>
+      <th>Package Details</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id }}</td>
+      <td>{{ order.pickupLocation }}</td>
+      <td>{{ order.dropoffLocation }}</td>
+      <td>{{ order.packageDetails }}</td>
+      <td>{{ order.status }}</td>
+      <td>
+        <button (click)="updateOrderStatus(order.id, 'completed')">Complete</button>
+        <button (click)="deleteOrder(order.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

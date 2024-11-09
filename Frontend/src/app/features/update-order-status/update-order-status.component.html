@@ -1,0 +1,19 @@
+
+<form (ngSubmit)="onUpdateStatus()" #statusForm="ngForm">
+    <div>
+      <label for="orderId">Order ID</label>
+      <input type="text" id="orderId" [(ngModel)]="orderId" name="orderId" required>
+    </div>
+
+    <div>
+      <label for="status">Select Status</label>
+      <select id="status" [(ngModel)]="status" name="status" required>
+        <option value="" disabled selected>Select Status</option>
+        <option value="picked up">Picked Up</option>
+        <option value="in transit">In Transit</option>
+        <option value="delivered">Delivered</option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="!statusForm.form.valid">Update Status</button>
+  </form>

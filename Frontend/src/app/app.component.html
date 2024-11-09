@@ -1,0 +1,32 @@
+<div class="app-container">
+  <h1>{{ title }}</h1>
+
+  <!-- Login Form for Unauthenticated Users -->
+  <div *ngIf="!isLoggedIn" class="login-form">
+    <h2>Login</h2>
+    <input [(ngModel)]="username" type="text" placeholder="Username" required />
+    <input [(ngModel)]="password" type="password" placeholder="Password" required />
+    <button (click)="login()">Login</button>
+  </div>
+
+  <!-- Dashboard for Authenticated Users -->
+  <div *ngIf="isLoggedIn">
+    <h2>Welcome, {{ username }}!</h2>
+    <button (click)="logout()">Logout</button>
+    <div *ngIf="isAdmin">
+      <h3>Admin Dashboard</h3>
+      <ul>
+        <li><a [routerLink]="['/admin/users']">Manage Users</a></li>
+        <li><a [routerLink]="['/admin/orders']">Manage Orders</a></li>
+        <li><a [routerLink]="['/admin/settings']">Settings</a></li>
+      </ul>
+    </div>
+    <div *ngIf="!isAdmin">
+      <h3>User Dashboard</h3>
+      <ul>
+        <li><a [routerLink]="['/my-orders']">My Orders</a></li>
+        <li><a [routerLink]="['/create-order']">Create Order</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

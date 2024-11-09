@@ -1,0 +1,25 @@
+<div class="manage-orders">
+    <h2>Manage Orders</h2>
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Status</th>
+          <th>Delivery Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.user }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.deliveryDate }}</td>
+          <td>
+            <button (click)="updateOrderStatus(order.id, 'Shipped')">Mark as Shipped</button>
+            <button (click)="updateOrderStatus(order.id, 'Delivered')">Mark as Delivered</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
