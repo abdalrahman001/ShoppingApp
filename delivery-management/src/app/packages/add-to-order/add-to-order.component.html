@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Add Package to Order</h2>
+
+  <form (ngSubmit)="addPackageToOrder()">
+    <div class="form-group">
+      <label for="packageId">Package ID</label>
+      <input
+        type="number"
+        id="packageId"
+        class="form-control"
+        [(ngModel)]="packageId"
+        name="packageId"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="orderId">Order ID</label>
+      <input
+        type="number"
+        id="orderId"
+        class="form-control"
+        [(ngModel)]="orderId"
+        name="orderId"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add to Order</button>
+  </form>
+</div>

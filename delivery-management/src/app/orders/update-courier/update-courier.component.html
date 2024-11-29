@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Update Courier</h2>
+
+  <form (ngSubmit)="updateCourier()">
+    <div class="form-group">
+      <label for="courierId">Courier ID:</label>
+      <input type="number" id="courierId" [(ngModel)]="courierData.courierId" name="courierId" required />
+    </div>
+
+    <!-- Add other input fields as needed for courier info -->
+
+    <button type="submit" class="btn btn-primary">Update Courier</button>
+  </form>
+</div>

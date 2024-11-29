@@ -1,0 +1,55 @@
+<div class="container">
+  <h2>Update Package</h2>
+
+  <form (ngSubmit)="updatePackage()">
+    <div class="form-group">
+      <label for="name">Package Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        [(ngModel)]="packageData.name"
+        name="name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="weight">Weight (kg)</label>
+      <input
+        type="number"
+        id="weight"
+        class="form-control"
+        [(ngModel)]="packageData.weight"
+        name="weight"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="dimensions">Dimensions</label>
+      <input
+        type="text"
+        id="dimensions"
+        class="form-control"
+        [(ngModel)]="packageData.dimensions"
+        name="dimensions"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        class="form-control"
+        [(ngModel)]="packageData.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Package</button>
+  </form>
+</div>
+<p>update-package works!</p>

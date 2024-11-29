@@ -1,0 +1,29 @@
+<div class="update-order-container">
+  <h2>Update Order</h2>
+
+  <div *ngIf="loading" class="loading">
+    <p>Loading order details...</p>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="!loading && orderDetails">
+    <p><strong>Order ID:</strong> {{ orderDetails._id }}</p>
+    <label for="pickupLocation">Pickup Location:</label>
+    <input [(ngModel)]="orderDetails.pickupLocation" id="pickupLocation" placeholder="Enter pickup location" />
+
+    <label for="dropOffLocation">Drop-off Location:</label>
+    <input [(ngModel)]="orderDetails.dropOffLocation" id="dropOffLocation" placeholder="Enter drop-off location" />
+
+    <label for="status">Order Status:</label>
+    <select [(ngModel)]="orderDetails.status" id="status">
+      <option value="In transit">In transit</option>
+      <option value="Delivered">Delivered</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+
+    <button (click)="updateOrder()">Update Order</button>
+  </div>
+</div>

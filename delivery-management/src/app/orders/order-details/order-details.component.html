@@ -1,0 +1,18 @@
+<div class="order-details-container">
+  <h2>Order Details</h2>
+
+  <div *ngIf="loading" class="loading">
+    <p>Loading order details...</p>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="orderDetails && !loading">
+    <p><strong>Pickup Location:</strong> {{ orderDetails.pickupLocation }}</p>
+    <p><strong>Drop-off Location:</strong> {{ orderDetails.dropOffLocation }}</p>
+    <p><strong>Package Details:</strong> {{ orderDetails.packageDetails }}</p>
+    <p><strong>Delivery Time:</strong> {{ orderDetails.deliveryTime }}</p>
+  </div>
+</div>

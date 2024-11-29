@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Package Details</h2>
+
+  <div *ngIf="packageDetails">
+    <p><strong>Package ID:</strong> {{ packageDetails.id }}</p>
+    <p><strong>Package Name:</strong> {{ packageDetails.name }}</p>
+    <p><strong>Package Description:</strong> {{ packageDetails.description }}</p>
+    <p><strong>Weight:</strong> {{ packageDetails.weight }} kg</p>
+    <p><strong>Dimensions:</strong> {{ packageDetails.dimensions }}</p>
+    <p><strong>Status:</strong> {{ packageDetails.status }}</p>
+  </div>
+
+  <div *ngIf="!packageDetails">
+    <p>Loading package details...</p>
+  </div>
+</div>

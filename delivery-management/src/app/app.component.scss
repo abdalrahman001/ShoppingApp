@@ -1,0 +1,9 @@
+/* Optional: Ensures that content isn't hidden behind the navbar */
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  margin-top: 60px;  /* Adjust according to the navbar height */
+}

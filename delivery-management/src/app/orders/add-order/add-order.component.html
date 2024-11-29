@@ -1,0 +1,18 @@
+<div class="add-order-container">
+  <h2>Add New Order</h2>
+  <form [formGroup]="addOrderForm" (ngSubmit)="onSubmit()">
+    <label for="pickupLocation">Pickup Location</label>
+    <input id="pickupLocation" formControlName="pickupLocation" type="text" placeholder="Enter pickup location" />
+
+    <label for="dropOffLocation">Drop-off Location</label>
+    <input id="dropOffLocation" formControlName="dropOffLocation" type="text" placeholder="Enter drop-off location" />
+
+    <label for="packageDetails">Package Details</label>
+    <input id="packageDetails" formControlName="packageDetails" type="text" placeholder="Enter package details" />
+
+    <label for="deliveryTime">Delivery Time</label>
+    <input id="deliveryTime" formControlName="deliveryTime" type="datetime-local" />
+
+    <button type="submit" [disabled]="addOrderForm.invalid">Add Order</button>
+  </form>
+</div>

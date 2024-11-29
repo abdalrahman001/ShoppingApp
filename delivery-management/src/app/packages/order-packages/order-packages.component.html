@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Packages for Order #{{ orderId }}</h2>
+
+  <div *ngIf="packages.length > 0">
+    <ul>
+      <li *ngFor="let package of packages">
+        <p><strong>Package Name:</strong> {{ package.name }}</p>
+        <p><strong>Weight:</strong> {{ package.weight }} kg</p>
+        <p><strong>Dimensions:</strong> {{ package.dimensions }}</p>
+        <p><strong>Description:</strong> {{ package.description }}</p>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="packages.length === 0">
+    <p>No packages found for this order.</p>
+  </div>
+</div>
