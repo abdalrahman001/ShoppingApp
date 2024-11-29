@@ -28,8 +28,7 @@ module.exports = class Courier {
         const query = `
             UPDATE couriers 
             SET name = ?, phone_number = ?, email = ? 
-            WHERE id = ?
-        `;
+            WHERE id = ? `;
         return db.execute(query, [
             updatedCourier.name,
             updatedCourier.phoneNumber,

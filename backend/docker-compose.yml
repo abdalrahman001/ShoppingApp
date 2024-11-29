@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:  
+      MYSQL_ROOT_PASSWORD: G4@67&*mQnY!
+      MYSQL_DATABASE: shopping_app
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306" 
+    expose:
+      - 3306
+    networks:
+      - app-network
+
+  node-backend:
+    build:
+      context: .  # This tells Docker to use the Dockerfile in the current directory
+    container_name: delapp
+    restart: always
+    environment:
+      DB_HOST: mysql  # The MySQL container's service name
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: G4@67&*mQnY!
+      DB_NAME: shopping_app
+    ports:
+      - "3000:3000"  # Map port 3000 inside the container to port 3000 on the host machine
+    networks:
+      - app-network
+    depends_on:
+      - mysql  # Ensure MySQL starts before Node.js backend
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
